@@ -3,7 +3,7 @@ class Calculator
   def add(string)
     return 0 if string.empty?
 
-    num_list = string.split(',')
+    num_list = string.scan(/-?\d+/)
 
     total = 0
     negatives = []
