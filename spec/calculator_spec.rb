@@ -25,5 +25,12 @@ RSpec.describe Calculator, "#test" do
   it 'number with another delimiter' do
     calculator = Calculator.new
     expect(calculator.add("//;\n[1];2,4")).to eq(7)
-  end  
+  end
+
+  it 'number with negative number' do 
+    calculator = Calculator.new
+    expect { 
+      calculator.add("//;\n[1];2,-4")
+    }.to raise_error("negative numbers not allowed -4")
+  end
 end

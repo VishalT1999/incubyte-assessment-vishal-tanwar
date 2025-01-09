@@ -17,6 +17,10 @@ class Calculator
       end
     end
 
+    if negatives.any?
+      raise "negative numbers not allowed #{negatives.join(',')}"
+    end
+
     total
   end
 end
